@@ -1,0 +1,9 @@
+POST http://localhost:5000/portfolio/contact
+Content-Type: application/json
+
+{
+    "name": "Your alterego!",
+    "email": "yg97.sm@gmail.com",
+    "subject": "You're Hired!",
+    "message": "Yes, you, exactly you, are hired! Aren't you happy?"
+}
