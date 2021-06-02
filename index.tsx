@@ -29,7 +29,7 @@ app.post("/portfolio/contact", (request, response) => {
 
   const mailOptions = {
     from: body.email,
-    to: "yg97.cs@gmail.com",
+    to: NODEMAILER_USER,
     subject: `Message  from ${body.name}, email: ${body.email}, subject: ${body.subject}`,
     text: body.message,
   };
