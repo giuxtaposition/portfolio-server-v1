@@ -1,4 +1,4 @@
-POST https://giuxtaposition.tech/portfolio/contact
+POST http://giuxtaposition.tech/portfolio/contact
 Content-Type: application/json
 
 {

@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-var smtpTransport = require("nodemailer-smtp-transport");
 
 const {
   MY_PORT,
@@ -20,19 +19,16 @@ app.get("/", (request, response) => {
 
 app.post("/portfolio/contact", (request, response) => {
   const body = request.body;
-  const transporter = nodemailer.createTransport(
-    smtpTransport({
-      service: NODEMAILER_SERVICE,
-      auth: {
-        user: NODEMAILER_USER,
-        pass: NODEMAILER_PASSWORD,
-      },
-    })
-  );
-
+  const transporter = nodemailer.createTransport({
+    service: NODEMAILER_SERVICE,
+    auth: {
+      user: NODEMAILER_USER,
+      pass: NODEMAILER_PASSWORD,
+    },
+  });
   const mailOptions = {
     from: body.email,
-    to: NODEMAILER_USER,
+    to: "yg97.cs@gmail.com",
     subject: `Message  from ${body.name}, email: ${body.email}, subject: ${body.subject}`,
     text: body.message,
   };
